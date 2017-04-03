@@ -29,7 +29,7 @@ Quick Installation
 
 2. In XCode, create a new project. The simplest application is a Single-View application.
 
-3. Open the project navigator in Xcode and drag the **WowWeeLumiSDK.framework** file from the Mac OS Finder to the Frameworks directory for your project in XCode.
+3. Open the project navigator in Xcode and drag the **WowWeeLumiPODSDK.framework** file from the Mac OS Finder to the Frameworks directory for your project in XCode.
 
 ![](Images/Project-Navigator-Example.png)
 
@@ -43,7 +43,7 @@ Also make that the framework is present under the _"Link Binary With Libraries"_
 
 5. In the DeviceHub.h file, add the following line at the top of the file:
 
-		#import <WowWeeLumiSDK/WowWeeLumiSDK.h>
+		#import <WowWeeLumiPODSDK/WowWeeLumiPODSDK.h>
 	
 Alternatively you can add this line into your Project-Prefix.pch (e.g. _Lumi-Prefix.pch_) file so that you don't need to import in each class your planning to use the SDK in.
 	
