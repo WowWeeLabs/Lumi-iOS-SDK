@@ -108,22 +108,16 @@ Using the SDK
 			
 			
 		Drive Lumi
-			[robot driveForwardWithSpeed:0.5f Time:0.16f];
-                        [robot driveBackwardWithSpeed:0.5f Time:0.16f];
-                        [robot turnLeftWithSpeed:1.0f Time:0.16f];
-                        [robot turnRightWithSpeed:1.0f Time:0.16f];
+			// - (void)joystickUpdate:(JoystickView *)joystick vector:(CGVector)vector
+				[[LumiFinder sharedInstance] firstConnectedLumi].stuntX = (int)(vector.dx * 450);
+   				[[LumiFinder sharedInstance] firstConnectedLumi].stuntY = (int)(vector.dy * 450);
+    
+    		- (void)cycle
+				int pitch  = [[LumiFinder sharedInstance] firstConnectedLumi].stuntY;
+		    	int roll  = [[LumiFinder sharedInstance] firstConnectedLumi].stuntX;
+				[lumi lumiFreeFlightWithThrust:0 yaw:lumiYAW pitch:pitch roll:roll];
 
-		Play animation
-			[robot playAnimationWithAnimationIndex:animationIndex EnableSound:YES]; // animationIndex = kLumiAnimationIndex_Character_001 - kLumiAnimationIndex_Vehicle_020 (Type: kLumiAnimationIndex)
-		Stop animation
-			[robot stopCommandWithType:kLumiStopTypeAnimation];
-		Play sound
-			[robot playSoundWithSoundIndex:soundIndex]; // soundIndex = kLumiSoundIndex_NA_Sfx_Pop - kLumiSoundIndex_forward_3 (Type: kLumiSoundIndex)
-                Stop sound
-			[robot stopCommandWithType:kLumiStopTypeSound];
-		Show image
-			[robot showImageWithImageIndex:imageIndex TemplateID:templateIndex]; // imageIndex = kLumiImageIndex_Character_1F408 - kLumiImageIndex_Vehicle_2708_B (Type: kLumiImageIndex) templateIndex = kLumiImage_AnimationTemplate_ScaleUp - kLumiImage_AnimationTemplate_None (Type: kLumiImage_AnimationTemplate)
-                    
+
 			    
 
 Notes about the SDK
