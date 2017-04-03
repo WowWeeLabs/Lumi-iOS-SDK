@@ -1,0 +1,6 @@
+framework module WowWeeLumiPODSDK {
+  umbrella header "WowWeeLumiPODSDK.h"
+
+  export *
+  module * { export * }
+}
